@@ -12,7 +12,8 @@ https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
 # YOUR CODE HERE
 
 with open("foo.txt") as f:
-    read_data = print(f.read())
+    print(f.read())
+    f.close()
 
 
 # Open up a file called "bar.txt" (which doesn't exist yet) for
@@ -22,7 +23,10 @@ with open("foo.txt") as f:
 
 # YOUR CODE HERE
 
-w = open("bar.txt", 'w')
+with open("bar.txt", 'w') as f:
+    f.write('This is a test,\nThis is also a Test,\nThis is the final Test')
+    f.close()
 
-with open("bar.txt") as x:
-    read_data = print(x.read())
+with open("bar.txt") as f:
+    print(f.read())
+    f.close()
